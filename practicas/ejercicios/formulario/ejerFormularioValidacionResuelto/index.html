@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Ejercicio 9</title>
+<link href="../../../../css/estilos.css" rel="stylesheet" type="text/css"/>
+<style>
+div#formulario{
+  margin-left: 15em;
+  margin-right: 15em;
+  width: 30em;
+  border: 2px ridge #000;
+}
+input, select{
+		border: 2px ridge #000;
+}
+input[type="radio"]{
+	margin-left: 2em;
+	border: 2px ridge #000;
+}
+input[type="checkbox"]{
+	margin-left: 2em;
+	border: 2px ridge #000;
+}
+.lLabel {
+  width: 30%;
+  float: left;
+  display: inline-block;
+}
+</style>
+<script>
+function validacion(){
+var valor = document.getElementById("idNombre").value;
+if(valor == null || valor.length == 0 || /^\s+$/.test(valor) ) {
+	document.getElementById('fallo1').innerHTML = 'Nombre obligatorio';
+	document.getElementById('fallo2').tabIndex = "0";
+	document.getElementById('fallo2').focus();
+}
+}
+function validacion2(){
+var valor2 = document.getElementById("idTelefono").value;
+if(valor2 == null || valor2.length == 0){
+document.getElementById('fallo2').innerHTML = 'Tel�fono obligatorio!';
+
+}
+}
+</script>
+</head>
+
+<body>
+<div id="cabecera">
+    <a href="http://www.ilunion.com">
+	<img id="cabecera_logo" src="../../../images/cabecera-logoilunion.png" alt="ILUNION Tecnolog�a y ACCESIBILIDAD, logotipo"/></a>
+    <span id="cabecera_texto">Curso de desarrollo de p�ginas Web Accesibles</span>
+</div>
+<h1>Ejercicio: Asociar cada control con su etiqueta</h1>
+
+
+<h2>Hoja de pedido de cubos</h2>
+<p id="dd">Los campos marcados con asterisco (*) son obligatorios</p>
+<div id="formulario">
+<form method="post" action="" id="fFormulario">
+<div><label for="idNombre" class="lLabel">Nombre empresa*</label>
+<input id="idNombre" type="text" size="50" name="nombre" onblur="validacion()" aria-labelledby="dd" aria-required="true">
+<span id="fallo1" aria-live="polite"></span></div>
+<div><label for="idTelefono" class="lLabel">Tel�fono*</label>
+<input id="idTelefono" type="text" size="50" name="telefono" onblur="validacion2()">
+<span aria-live="assertive" id="fallo2"></span></div>
+<fieldset>
+<div><legend>Material</legend></div>	  
+	  <div>
+<div><input id="idMaterial1" type="radio" name="material" value="metal"><label for="idMaterial1">Metal</label></div>
+<div><input id="idMaterial2" type="radio" name="material" value="plastico"><label for="idMaterial2">Pl�stico</label></div>
+	  </fieldset>
+<div><label class="lLabel" for="idModelos">Modelo</label>
+	  <select name="modelos" id="idModelos">
+        <option>primavera</option>
+        <option>oto�o</option>
+        <option>invierno</option>
+        <option>verano</option>
+        <option>alegr�a</option>
+        <option>misterio</option>
+      </select>
+</div>
+<div>
+<input type="checkbox" value="ON" name="express" id="idExpress">
+<label for="idExpress">Env�o express</label>
+</div>
+<div><label class="lLabel"for="idCantidad">Cantidad</label>
+<select size="1" name="cantidad" id="idCantidad">
+        <option>10</option>
+        <option>20</option>
+        <option>30</option>
+        <option>40</option>
+        <option>50</option>
+      </select></div>
+	  <div><label for="idRadio1">Nota del producto</label>
+    <input type="radio" value="x" id="idRadio1"/>
+    <input type="radio" value="x" />
+    <input type="radio" value="x" />
+    <input type="radio" value="x" />
+    <input type="radio" value="x" />
+    <input type="radio" value="x" />
+   </div>
+	  <div>
+	  <input type="submit" value="Enviar" name="enviar" onclick="validacion()">
+	  </div>
+
+</div>
+</form>
+</div>
+<div  class="cuerpo_diapo">
+	<p id="nota_copyright">Copyright &copy; Fundosa Technosite. Reservados todos los derechos.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,303 @@
+BODY {
+	MARGIN: 0px; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left
+}
+HTML {
+	HEIGHT: 100%
+}
+BODY {
+	HEIGHT: 100%
+}
+H1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H4 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H5 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+FORM {
+	MARGIN: 0px
+}
+P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 8px; MARGIN: 0px; PADDING-TOP: 0px
+}
+.letraMapaWeb1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraMapaWeb1:hover {
+	COLOR: #c80505
+}
+.letraMapaWeb2 {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraMapaWeb2:hover {
+	COLOR: #c80505
+}
+.letraMapaWeb3 {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #777777; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraMapaWeb3:hover {
+	COLOR: #c80505
+}
+.letraTagsLouds {
+	LINE-HEIGHT: 15px
+}
+.letraTagsLoudsA {
+	FONT-WEIGHT: bold; FONT-SIZE: 22px; COLOR: #bbbbbb; LINE-HEIGHT: 15px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraTagsLoudsA:hover {
+	COLOR: #c80505
+}
+.letraTagsLoudsB {
+	FONT-WEIGHT: bold; FONT-SIZE: 18px; COLOR: #bbbbbb; LINE-HEIGHT: 15px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraTagsLoudsB:hover {
+	COLOR: #c80505
+}
+.letraTagsLoudsC {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #bbbbbb; LINE-HEIGHT: 15px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraTagsLoudsC:hover {
+	COLOR: #c80505
+}
+.letraTagsLoudsD {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #bbbbbb; LINE-HEIGHT: 15px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraTagsLoudsD:hover {
+	COLOR: #c80505
+}
+.letraTagsLoudsE {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #bbbbbb; LINE-HEIGHT: 15px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraTagsLoudsE:hover {
+	COLOR: #c80505
+}
+.letraTitularesHome {
+	FONT-WEIGHT: bold; FONT-SIZE: 26px; COLOR: #c80505; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.letraTitulares {
+	FONT-WEIGHT: bold; FONT-SIZE: 28px; COLOR: #c80505; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.letraTitularH2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 15px; COLOR: #c80505; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraTitularH2:hover {
+	TEXT-DECORATION: none
+}
+.letraTitularH218 {
+	FONT-WEIGHT: bold; FONT-SIZE: 18px; COLOR: #c80505; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraTitularH2Negro {
+	FONT-WEIGHT: bold; FONT-SIZE: 15px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraPie1 {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #444444; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.letraPie2 {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #999999; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.letraPieLink {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #999999; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraPieLink:hover {
+	COLOR: #444444
+}
+.letraDescripcion11 {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #777777; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.letraDescripcion12Gris {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #777777; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraLink11Negra {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraDescripcion13Gris {
+	FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: #777777; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.letraDescripcion12 {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #222222; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraDescripcionLink11 {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #777777; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraDescripcionLink11:hover {
+	COLOR: #c80505
+}
+.letraDescripcionLinked11 {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #c80505; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraTituloApunts {
+	FONT-WEIGHT: bold; FONT-SIZE: 17px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraTituloCicleE13 {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #c80505; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraTituloCicleE13_Black {
+	FONT-WEIGHT: bold; FONT-SIZE: 17px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraTituloExpoE13 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #000; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraTituloApunts:hover {
+	COLOR: #c80505
+}
+.letraSeccioApunts {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #c80505; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraExpoTitulo {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #333333; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraExpoTituloCiclo {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #c80505; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraObraTitulo {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #333333; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraObraYear {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #c80505; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraEspai13TitleH1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 20px; COLOR: #c80505; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraEspai13TitleH2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 15px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraEspai13Title {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraEspai13Normal {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraEspai13Descripcion {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #999; LINE-HEIGHT: 11px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraEspai13BigDescripcion {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #999; LINE-HEIGHT: 13px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraEspai13Date {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #848382; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraFechaApunts {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #777777; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraApartado {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #777777; LINE-HEIGHT: 17px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraApartadoLink {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #777777; LINE-HEIGHT: 17px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraApartadoLink:hover {
+	COLOR: #c80505
+}
+.letraApartadoSLink {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #c80505; LINE-HEIGHT: 17px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraApartadoSLink:hover {
+	COLOR: #000000
+}
+.letraApartadoSLink10 {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #c80505; LINE-HEIGHT: 17px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraApartadoSLink10:hover {
+	COLOR: #000000
+}
+.letraApartadoLinkRed {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #c80505; LINE-HEIGHT: 17px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraApartadoLinkRed:hover {
+	COLOR: #c80505
+}
+.letraApartadoLinked {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #000000; LINE-HEIGHT: 17px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraApartadoLinked:hover {
+	COLOR: #c80505
+}
+.letraMenuLink {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #777777; LINE-HEIGHT: 17px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraMenuLink:hover {
+	COLOR: #c80505
+}
+.letraMenuLinked {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #252525; LINE-HEIGHT: 17px; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.letraMenuLinked:hover {
+	COLOR: #252525
+}
+.campoTextoPunteado {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 1px; BACKGROUND-POSITION: 50% bottom; BORDER-TOP: 0px; PADDING-LEFT: 1px; FONT-SIZE: 10px; BACKGROUND-IMAGE: url(../img/punteado.jpg); PADDING-BOTTOM: 1px; MARGIN: 1px; BORDER-LEFT: 0px; COLOR: #555555; PADDING-TOP: 1px; BORDER-BOTTOM: 0px; BACKGROUND-REPEAT: repeat-x; FONT-FAMILY: Helvetica, Arial, sans-serif; BACKGROUND-COLOR: #ffffff
+}
+.campoTextoGrisClaro {
+	BORDER-RIGHT: #dbdbdb 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #dbdbdb 1px solid; PADDING-LEFT: 1px; FONT-SIZE: 10px; PADDING-BOTTOM: 1px; MARGIN: 1px; BORDER-LEFT: #dbdbdb 1px solid; COLOR: #555555; PADDING-TOP: 1px; BORDER-BOTTOM: #dbdbdb 1px solid; FONT-FAMILY: Helvetica, Arial, sans-serif; BACKGROUND-COLOR: #ffffff
+}
+.campoTextoGris {
+	BORDER-RIGHT: #5c5c5c 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #5c5c5c 1px solid; PADDING-LEFT: 1px; FONT-SIZE: 10px; PADDING-BOTTOM: 1px; MARGIN: 2px; BORDER-LEFT: #5c5c5c 1px solid; COLOR: #555555; PADDING-TOP: 1px; BORDER-BOTTOM: #5c5c5c 1px solid; FONT-FAMILY: Helvetica, Arial, sans-serif; BACKGROUND-COLOR: #ffffff
+}
+.campoTextoGrisB {
+	BORDER-RIGHT: #5c5c5c 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #5c5c5c 1px solid; PADDING-LEFT: 1px; FONT-SIZE: 10px; PADDING-BOTTOM: 1px; MARGIN: 0px; BORDER-LEFT: #5c5c5c 1px solid; COLOR: #555555; PADDING-TOP: 1px; BORDER-BOTTOM: #5c5c5c 1px solid; FONT-FAMILY: Helvetica, Arial, sans-serif; BACKGROUND-COLOR: #ffffff
+}
+.campoTextoGrisSmall {
+	BORDER-RIGHT: #5c5c5c 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #5c5c5c 1px solid; PADDING-LEFT: 1px; FONT-SIZE: 9px; PADDING-BOTTOM: 1px; MARGIN: 0px; BORDER-LEFT: #5c5c5c 1px solid; COLOR: #555555; PADDING-TOP: 1px; BORDER-BOTTOM: #5c5c5c 1px solid; FONT-FAMILY: Helvetica, Arial, sans-serif; BACKGROUND-COLOR: #ffffff
+}
+.transBlanco60 {
+	BORDER-RIGHT: black 0px solid; BORDER-TOP: black 0px solid; FILTER: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='png/blanco60por.png'); BORDER-LEFT: black 0px solid; BORDER-BOTTOM: black 0px solid
+}
+[class].transBlanco60 {
+	BACKGROUND-IMAGE: url(../png/blanco60por.png)
+}
+.transBlanco40 {
+	BORDER-RIGHT: black 0px solid; BORDER-TOP: black 0px solid; FILTER: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='png/blanco40por.png'); BORDER-LEFT: black 0px solid; BORDER-BOTTOM: black 0px solid
+}
+[class].transBlanco40 {
+	BACKGROUND-IMAGE: url(../png/blanco40por.png)
+}
+.transNegro40 {
+	BORDER-RIGHT: black 0px solid; BORDER-TOP: black 0px solid; FILTER: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='png/negro40por.png'); BORDER-LEFT: black 0px solid; BORDER-BOTTOM: black 0px solid
+}
+[class].transNegro40 {
+	BACKGROUND-IMAGE: url(../png/negro40por.png)
+}
+.transBlanco20 {
+	BORDER-RIGHT: black 0px solid; BORDER-TOP: black 0px solid; FILTER: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='png/blanco20por.png'); BORDER-LEFT: black 0px solid; BORDER-BOTTOM: black 0px solid
+}
+[class].transBlanco20 {
+	BACKGROUND-IMAGE: url(../png/blanco20por.png)
+}
+.delicious-posts {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 10px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 500px; PADDING-TOP: 0px; FONT-FAMILY: sans-serif
+}
+.delicious-posts UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+.delicious-posts LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+.delicious-banner {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+.delicious-post {
+	PADDING-LEFT: 20px; FONT-SIZE: 60%; PADDING-TOP: 8px
+}
+.delicious-odd {
+	BACKGROUND-COLOR: #ffffff
+}
+.delicious-banner A {
+	FONT-SIZE: 60%
+}
+.delicious-posts A:hover {
+	TEXT-DECORATION: underline
+}
+.delicious-posts A {
+	PADDING-RIGHT: 0.3em; DISPLAY: block; PADDING-LEFT: 0.3em; FONT-SIZE: 12px; PADDING-BOTTOM: 0.3em; COLOR: #777777; PADDING-TOP: 0.3em; TEXT-DECORATION: none
+}
+.delicious-post A {
+	FONT-SIZE: 11px; COLOR: #c80505
+}
