@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>DOM</title>
+<link href="../../../css/estilos.css" rel="stylesheet" type="text/css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>DOM</title>
+
+<script type="text/javascript">
+function anade() {
+var elemento = document.createElement("li");
+var texto = document.createTextNode("Texto DOM");
+elemento.appendChild(texto);
+
+var lista = document.getElementById("lista");
+lista.appendChild(elemento);
+
+
+
+var nuevoElemento = "<li>Texto de innerHTML</li>";
+lista.innerHTML = lista.innerHTML + nuevoElemento;
+foco();
+}
+
+function foco(){
+	document.getElementById("item").tabIndex = "0";
+    document.getElementById("item").focus();
+}
+function focoFormulario(){
+	document.getElementById("idformulario").focus();
+}
+
+</script>
+</head>
+
+<body>
+<div id="cabecera">
+    <a href="http://www.ilunion.com">
+	<img id="cabecera_logo" src="../../../images/cabecera-logoilunion.png" alt="ILUNION Tecnología y ACCESIBILIDAD, logotipo"/></a>
+    <span id="cabecera_texto">Curso de desarrollo de páginas Web Accesibles</span>
+</div>
+<h1 id="item">Evaluar la compatibilidad de innerHTML con los productos de apoyo</h1>
+<form action="">
+<input type="text" name="c4" value="tocameroque" id="idformulario">
+</form>
+<ul id="lista">
+	<li>Lorem ipsum dolor sit amet</li>
+	<li>Consectetuer adipiscing elit</li>
+	<li>Sed mattis enim vitae orci</li>
+	<li>Phasellus libero</li>
+	<li>Maecenas nisl arcu</li>
+</ul>
+<input type="button" value="Añadir elemento" onclick="anade();">
+<a href="#c4" onclick="focoFormulario();">Añadir elemento</a>
+<div  class="cuerpo_diapo">
+	<p id="nota_copyright">Copyright &copy; ILUNION Tecnología y Accesibilidad. Reservados todos los derechos.</p>
+</div> 
+</body>
+</html>

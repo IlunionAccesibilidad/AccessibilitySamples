@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<link href="../../../css/estilos.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+  function toggle(id, id2) {
+    var n = document.getElementById(id);
+	/*Cierro menú*/
+	if (n.style.display != 'none') 
+	  {
+	  n.style.display = 'none';
+      document.getElementById(id2).setAttribute('aria-expanded', 'false');
+  }
+  /*abro menú*/
+  else
+  {
+  n.style.display = '';
+  document.getElementById(id2).setAttribute('aria-expanded', 'true');
+  }
+}
+  </script>
+  <style>
+  
+
+  ul {
+  background: #F4F4F4;
+  border: 1px solid #7C7C7C;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+ul li{
+  color: #333;
+  display: block;
+  padding: .3em;
+  text-decoration: none;
+    float: left;
+  width: 20%;
+}
+  </style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Rodriguez Otero, Pablo</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">154900.000000000</mso:Order>
+<mso:SharedWithUsers msdt:dt="string"></mso:SharedWithUsers>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Rodriguez Otero, Pablo</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:ContentTypeId msdt:dt="string">0x010100A304EC9365CF974E909DE8540D2A7CC2</mso:ContentTypeId>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+<div id="cabecera">
+    <a href="http://www.ilunion.com">
+	<img id="cabecera_logo" src="../../../images/cabecera-logoilunion.png" alt="ILUNION Tecnología y ACCESIBILIDAD, logotipo"/></a>
+    <span id="cabecera_texto">Curso de desarrollo de páginas Web Accesibles</span>
+</div>
+
+<h1> Ocultar y mostrar menú</h1>
+
+<a aria-expanded="true" id="enlace" href="#" onclick="toggle('menu', 'enlace')">Barra para ocultar y mostrar un menú</a>
+<ul role="menu" id="menu">
+  <li><a role="menuitem" href="#" aria-selected="true" aria-label="Enlace 1 opción selecionada">Enlace 1</a></li>
+  <li><a role="menuitem" href="#">Enlace 2</a></li>
+  <li><a role="menuitem" href="#">Enlace 3</a></li>
+  <li><a role="menuitem" href="#">Enlace 4</a></li>
+</ul>
+
+
+<ul role="tablist" id="menu">
+  <li><a role="tab" href="#" aria-selected="true">Enlace 1</a></li>
+  <li><a role="tab" href="#">Enlace 2</a></li>
+  <li><a role="tab" href="#">Enlace 3</a></li>
+  <li><a role="tab" href="#">Enlace 4</a></li>
+</ul>
+
+
+
+<ul class="tablist" role="tablist"> 
+<li id="tab1" class="tab" aria-controls="panel1" role="tab" aria-selected="true">Fruits</li> 
+<li id="tab2" class="tab" aria-controls="panel2" role="tab">Vegetables </li> 
+</ul> 
+<div id="panel1" aria-labelledby="tab1" role="tabpanel"> 
+<h3>Fruits</h3> 
+<ul>
+<li>Apple</li>
+<li>Orange</li>
+<li>Banana</li>
+</ul>
+</div> 
+<div id="panel2" aria-labelledby="tab2" role="tabpanel"> 
+<h3>Vegetables</h3> 
+<ul>
+<li>Potato</li>
+<li>Tomato</li>
+<li>Carrot</li>
+</ul>
+</div>
+</body>
+</html>

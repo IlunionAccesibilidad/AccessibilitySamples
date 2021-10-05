@@ -1,0 +1,1239 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es" >
+<head>
+<title>ARIA Example: Tabpanel Example 1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<style type="text/css">
+div.codebox {
+	background-color: #E0E0E0;
+	color: black;
+	font-family: monospace;
+	padding: .5em;
+	margin: .5em;
+	border: black medium solid;
+}
+h2.nav {
+	position: absolute;
+	left: -200em;
+	top: -20em;
+}
+ul.nav {
+	margin: 0;
+	padding: 0;
+}
+ul.nav li {
+	display: inline;
+	list-style: none;
+	padding-right: 1em;
+}
+</style>
+<script type="text/javascript">
+  
+  function changeSourceCodeView(node_link, sc_id  ) {
+   
+     var node_sc = document.getElementById( sc_id );
+	 
+	 if( node_sc ) 
+	   if( node_sc.style.display == "none" ) {
+	      node_sc.style.display = "block";
+		  node_link.innerHTML = node_link.innerHTML.replace(/Show/, "Hide");
+	   } else {
+	      node_sc.style.display = "none";	 
+		  node_link.innerHTML = node_link.innerHTML.replace(/Hide/, "Show");
+	   } // endif
+     else 
+	   alert("Id not found");
+  }
+  
+  </script>
+<style type="text/css">
+/* CSS Document */
+
+div.tabpanel ul[role="tablist"] {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+div.tabpanel li[role="tab"] {
+	display: inline;
+	margin: 0;
+	border-top: thin solid black;
+	border-left: thin solid black;
+	border-right: thin solid black;
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-top: .25em;
+	padding-bottom: .125em;
+	font-weight: bold;
+	background-color: #0099CC;
+	color: white;
+}
+div.tabpanel li.selected {
+	background-color: white;
+	color: black;
+}
+div.tabpanel div[role="tabpanel"] {
+	border: thin solid black;
+	padding: 1em;
+	width: 30em;
+}
+div.tabpanel div[role="tabpanel"] ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+div.tabpanel div[role="tabpanel"] h3 {
+	margin: 0;
+	padding: 0;
+	margin-bottom: .25em;
+}
+</style>
+<script type="text/javascript">
+/**
+ *
+ * The Globale Variables
+ */
+
+if (!window.Node) {
+  var Node = {            // If there is no Node object, define one
+    ELEMENT_NODE: 1,    // with the following properties and values.
+    ATTRIBUTE_NODE: 2,  // Note that these are HTML node types only.
+    TEXT_NODE: 3,       // For XML-specific nodes, you need to add
+    COMMENT_NODE: 8,    // other constants here.
+    DOCUMENT_NODE: 9,
+    DOCUMENT_FRAGMENT_NODE: 11
+  }
+} 
+
+
+var KEY_PAGEUP   = 33;
+var KEY_PAGEDOWN = 34;
+var KEY_END      = 35;
+var KEY_HOME     = 36;
+
+var KEY_LEFT     = 37;
+var KEY_UP       = 38;
+var KEY_RIGHT    = 39;
+var KEY_DOWN     = 40;
+
+var KEY_SPACE    = 32;
+var KEY_TAB      = 9;
+
+var KEY_BACKSPACE = 8;
+var KEY_DELETE    = 46;
+var KEY_ENTER     = 13;
+var KEY_INSERT    = 45;
+var KEY_ESCAPE    = 27;
+
+var KEY_F1        = 112;
+var KEY_F2        = 113;
+var KEY_F3        = 114;
+var KEY_F4        = 115;
+var KEY_F5        = 116;
+var KEY_F6        = 117;
+var KEY_F7        = 118;
+var KEY_F8        = 119;
+var KEY_F9        = 120;
+var KEY_F10       = 121;
+
+var KEY_M         = 77;
+
+var NS_XHTML = "http://www.w3.org/1999/xhtml"
+var NS_STATE = "http://www.w3.org/2005/07/aaa";
+
+// **********************************************
+// *
+// * Commonly used helper functions
+// *
+// **********************************************
+
+/**
+ *
+ * nextSiblingElement
+ * 
+ * @contructor
+ */
+ 
+function nextSiblingElement( node ) {
+
+  var next_node = node.nextSibling;
+
+  while( next_node
+		&& (next_node.nodeType != Node.ELEMENT_NODE) ) {
+	  next_node = next_node.nextSibling;
+  }  // endwhile
+
+  return next_node;
+  
+}
+
+/**
+ *
+ * previousSiblingElement 
+ * 
+ * @param ( node ) node object for which you are looking for the next sibling element node
+ *
+ * @return ( node) next sibling or "null"
+ */
+ 
+function previousSiblingElement( node ) {
+
+  var next_node = node.previousSibling;
+
+  while( next_node
+		&& (next_node.nodeType != Node.ELEMENT_NODE) ) {
+	  next_node = next_node.previousSibling;
+  }  // endwhile
+
+  return next_node;
+  
+}
+
+/**
+ *
+ * firstChildElement 
+ * 
+ * @param ( node ) node object for which you are looking for the first child element node
+ *
+ * @return ( node) next sibling or "null"
+ */
+ 
+function firstChildElement( node ) {
+
+  var next_node = node.firstChild;
+
+  while( next_node
+		&& (next_node.nodeType != Node.ELEMENT_NODE) ) {
+	  next_node = next_node.nextSibling;
+  }  // endwhile
+
+
+  return next_node;
+  
+}
+
+/**
+ *
+ * getTextContentOfNode
+ * 
+ * @contructor
+ */
+ 
+function getTextContentOfNode( node ) {
+
+  var next_node = node.firstChild;
+  var str = "";
+
+  while( next_node ) {
+		
+	  if( (next_node.nodeType == Node.TEXT_NODE ) &&
+		  (next_node.length > 0 )
+		 )
+	    str += next_node.data;
+	  
+	  
+	  next_node = next_node.nextSibling;
+	  
+  }  // endwhile
+
+  return str;
+  
+}
+
+/**
+ *
+ * setTextContentOfNode
+ * 
+ * @contructor
+ */
+ 
+function setTextContentOfNode( node, text ) {
+
+   // Generate a new text node with the text value
+    var text_node = document.createTextNode(text);
+  
+    // Remove child nodes to remove text
+    while (node.firstChild) {
+      node.removeChild(node.firstChild);
+    } // while
+
+    // Append new text to the container element
+    node.appendChild( text_node );
+
+}
+  </script>
+<script type="text/javascript">
+// JavaScript Document
+// Widgets is a way to initialize widgets in the ARIA examples
+
+ 
+function Widgets() {
+  this.widgets = new Array();
+}
+
+/**
+ * add is member of the Widgets Object 
+ * and used add a widget ot the list of widgets to be intitialized 
+ * as part of the onload event
+ * The controls array is the list of controls to initialize
+ * @member Enable
+ * @return none
+ */
+
+Widgets.prototype.add = function(obj) {
+  this.widgets[this.widgets.length] = obj;
+}
+
+/**
+ * init is member of the Widgets Object 
+ * and is called by the onload event to initialize widgets in the web resource
+ * The controls array is the list of controls to initialize
+ * @member Enable
+ * @return none
+ */
+
+Widgets.prototype.init = function() {
+   	
+   for(var i = 0; i < this.widgets.length; i++ )
+     this.widgets[i].init();
+}
+
+var widgets = new Widgets();
+
+function initApp() {
+  widgets.init();
+}
+
+  </script>
+<script type="text/javascript">
+// JavaScript Document
+// This module is to abstract browser dependencies
+// This makes the widget code cleaner and earier to read by making most browser specfic coding
+// in one place rather han scatered throghot documents
+var ARIA_STATE = "aria-";
+
+//
+// WebBrowser object to abstract accessibility API differences between web standards supporting browsers and Internet Explorer 7.0
+//
+// The state variable keeps track of current state of checkbox
+function WebBrowser() {
+
+}
+
+
+//
+// keyCode is a function to get the keycode from a keypress event
+//
+// @param ( event object) event is an event object
+//
+// @return ( keycode ) 
+
+WebBrowser.prototype.keyCode = function( event ) {
+  var e = event || window.event;
+  
+  return e.keyCode;
+}  
+
+/**
+ * OnClick Event Simulator
+ *
+ * @param ( node ) DOM node object
+ * @return nothing
+ */
+
+if( document.createEvent ) {
+
+  // If a web standards based browser implement this function
+
+  WebBrowser.prototype.simulateOnClickEvent = function( node ) {
+    // W3C DOM Events way to trigger a "click" event
+    var e = document.createEvent('MouseEvents');
+    e.initEvent( 'click', true, true );
+
+    node.dispatchEvent( e );
+
+  } 
+
+} else {
+
+  // If a Microsoft IE based browser implement this function
+  
+  WebBrowser.prototype.simulateOnClickEvent = function( node ) {
+
+    var e = document.createEventObject();
+    node.fireEvent( "onclick", e );
+
+  } // endif
+
+}
+
+if ( document.addEventListener ) {
+
+  // If a web standards based browser implement this function
+
+  WebBrowser.prototype.setMouseCapture = function( node, clickHandler, downHandler, moveHandler, upHandler ) {
+
+    if( clickHandler )
+      document.addEventListener( "click",     clickHandler, true );
+		
+    if( downHandler )
+      document.addEventListener( "mousedown", downHandler,  true );
+
+    if( moveHandler )
+      document.addEventListener( "mousemove", moveHandler,  true );
+		
+		if( upHandler)
+      document.addEventListener( "mouseup",   upHandler,    true );
+
+  }
+
+  WebBrowser.prototype.releaseMouseCapture = function( node, clickHandler, downHandler, moveHandler, upHandler ) {
+
+	if( upHandler)
+      document.removeEventListener( "mouseup",   upHandler,    true );
+			
+    if( moveHandler )
+      document.removeEventListener( "mousemove", moveHandler,  true );
+		
+    if( downHandler )
+      document.removeEventListener( "mousedown", downHandler,  true );
+			
+    if( clickHandler )
+      document.removeEventListener( "click",     clickHandler, true );
+
+  }
+
+} else {
+
+  // If a Microsoft IE based browser implement this function
+
+  WebBrowser.prototype.setMouseCapture = function( node, clickHandler, downHandler, moveHandler, upHandler ) {
+
+   node.setCapture();
+   if( clickHandler)
+	   node.attachEvent( "onclick", clickHandler );
+		 
+   if( downHandler)
+     node.attachEvent( "onmousedown", downHandler );
+		 
+   if( moveHandler )
+	   node.attachEvent( "onmousemove", moveHandler );
+		 
+   if( upHandler )
+	   node.attachEvent( "onmouseup", upHandler );
+
+  } // endif
+
+  WebBrowser.prototype.releaseMouseCapture = function( node, clickHandler, downHandler, moveHandler, upHandler ) {
+
+   if( upHandler )
+     node.detachEvent( "onmouseup", upHandler );
+		 
+   if( moveHandler )
+     node.detachEvent( "onmousemove", moveHandler );
+		 
+   if( downHandler)
+     node.detachEvent( "onmousedown", downHandler );
+		 
+   if( clickHandler)
+     node.detachEvent( "onclick", clickHandler );
+		 
+     node.releaseCapture();
+
+  } // endif
+
+
+}
+
+
+
+
+if (typeof document.documentElement.setAttributeNS != 'undefined') {
+
+  WebBrowser.prototype.stopPropagation = function( event ) {
+    event.stopPropagation();
+    event.preventDefault();
+    return false;
+  }
+
+  WebBrowser.prototype.target = function( event ) {
+	return event.target;
+  }
+  
+  WebBrowser.prototype.attrName = function( event ) {
+	return event.attrName;
+  }
+  
+ 
+  WebBrowser.prototype.charCode = function(event) {
+     return event.charCode;
+  }
+
+  WebBrowser.prototype.calculateOffsetLeft = function( node ) {
+	return node.offsetLeft;	  
+  }
+  
+  WebBrowser.prototype.calculateOffsetTop = function( node ) {
+	return node.offsetTop;	  
+  }
+  
+  WebBrowser.prototype.pageX = function( e ) {
+		return e.pageX;	  
+  }
+  
+  WebBrowser.prototype.pageY = function( e ) {
+		return e.pageY;	  
+  }
+  
+  WebBrowser.prototype.setNodePosition = function(node,left,top) {
+		node.style.left = left+"px";
+		node.style.top = top+"px";
+  }
+
+
+} else {
+
+  WebBrowser.prototype.stopPropagation = function( event ) {
+    event.cancelBubble = true; 
+    event.returnValue = false;
+    return false;
+  }
+
+  WebBrowser.prototype.charCode = function(event) {
+    return window.browser.keyCode( event );
+  }
+
+  WebBrowser.prototype.target = function( event ) {
+    return event.srcElement;
+  }
+
+  WebBrowser.prototype.attrName = function( event ) {
+	return event.propertyName;
+  }
+    
+  WebBrowser.prototype.calculateOffsetLeft = function(node) {
+	var offset = 0;
+	
+	while( node ) {
+	  offset += node.offsetLeft;
+	  node = node.offsetParent;
+	}
+	
+	return offset;	  
+  }
+  
+  WebBrowser.prototype.calculateOffsetTop = function(node) {
+	var offset = 0;
+	
+	while( node ) {
+		offset = offset + node.offsetTop;
+		node = node.offsetParent;
+	}
+	
+	return offset;	  
+  }
+  
+  WebBrowser.prototype.pageX = function( e ) {
+		return e.clientX + (document.documentElement.scrollLeft || document.body.scrollLeft);	  
+  }
+  
+  WebBrowser.prototype.pageY = function( e ) {
+		return e.clientY + (document.documentElement.scrollTop || document.body.scrollTop);	  
+  }
+  
+  WebBrowser.prototype.setNodePosition = function(node,left,top) {
+		offsetx = 0;
+		offsety = 0;
+		nnode = node.offsetParent
+		while( nnode ) {
+			offsetx = offsetx + nnode.offsetLeft;
+			offsety = offsety + nnode.offsetTop;
+			nnode = nnode.offsetParent;
+		}
+		node.style.left = left-offsetx+"px";
+		node.style.top = top-offsety+"px";
+  }
+  
+};
+
+
+if (document.addEventListener) {
+
+     // Functions for W3C Standards compliant implementation of adding event handlers
+
+     WebBrowser.prototype.addEvent = function(elmTarget, sEventName, fCallback) {
+       elmTarget.addEventListener(sEventName, fCallback, false);
+       returnValue = true;
+     };
+
+     WebBrowser.prototype.removeEvent = function(elmTarget, sEventName, fCallback) {
+       elmTarget.removeEventListener(sEventName, fCallback, false);
+       returnValue = true;
+     };
+
+     WebBrowser.prototype.addChangeEvent =  function(elmTarget, fCallback) {
+      elmTarget.addEventListener("DOMAttrModified", fCallback, false);
+      returnValue = true;
+    };
+
+} else {
+
+  if(document.attachEvent) {
+
+     // IE Specific Event handler functions
+     WebBrowser.prototype.addEvent = function(elmTarget, sEventName, fCallback) {
+       returnValue = elmTarget.attachEvent('on' + sEventName, fCallback);
+     };
+
+     WebBrowser.prototype.removeEvent = function(elmTarget, sEventName, fCallback) {
+       returnValue = elmTarget.detachEvent('on' + sEventName, fCallback);
+     };
+
+    WebBrowser.prototype.addChangeEvent =  function(elmTarget, fCallback) {
+      returnValue = elmTarget.attachEvent("onpropertychange", fCallback);
+    };
+
+  } else {
+
+     // For browsers that do not support W3C or IE event functions
+     WebBrowser.prototype.addEvent = function(elmTarget, sEventName, fCallback) {
+       return false;
+     };
+
+     WebBrowser.prototype.removeEvent = function(elmTarget, sEventName, fCallback) {
+       return false;
+     };
+
+     WebBrowser.prototype.addChangeEvent =  function(elmTarget, fCallback) {
+       return false;
+     };
+
+  }
+
+}
+
+var browser = new WebBrowser();
+
+  </script>
+<script type="text/javascript">
+// JavaScript Document
+
+/**
+ * NODE_LAST_FOCUS keeps track of which form element in the tab panel had last focus
+ */
+
+var NODE_LAST_FOCUS = null;
+
+/**
+ *
+ * The TabPanel object is used to maintain information about a Tab Panel widget
+ * including the collection of tab objects 
+ * 
+ * @contructor
+ */
+ 
+
+function TabPanel( id ) {
+
+  this.id = id;
+  this.tabs = new Array();
+  this.current_tab = 0;
+	this.last_keycode = 0;
+
+
+}
+
+/**
+ * init is a subclass of TabPanel and is used to initialize the event handlers and 
+ * tabs in a tab panel.
+ * 
+ * @member TabPanel
+ * @return nothing
+ */
+ 
+TabPanel.prototype.init = function() {
+
+  this.node = document.getElementById(this.id);
+
+  var obj = this;
+
+  browser.addEvent(this.node, "click",   function(event) {handleTabPanelClickEvent(event, obj); }, false);
+  browser.addEvent(this.node, "keydown", function(event) {handleTabPanelKeyDownEvent(event, obj); }, true);
+  browser.addEvent(this.node, "keypress", function(event) {handleTabPanelKeyPressEvent(event, obj); }, true);
+
+  for(var i = 0; i < this.tabs.length; i++ )
+     this.tabs[i].init();
+
+  selectTabPanel( this, this.current_tab );
+
+}
+
+/**
+ * add is a subclass of TabPanel 
+ * The tab obj is added to the list of tabs in a Tab Panel object
+ *
+ * @member TabPanel
+ * @param ( Tab Object) obj
+ * @return nothing
+ */
+ 
+TabPanel.prototype.add = function(obj) {
+  this.tabs[this.tabs.length] = obj;
+}
+
+
+/**
+ *
+ * The Tab object is used to maintain information about a panel in a Tab Panel widget 
+ * including the node of the last control that had focus in the tab panel
+ *
+ * @params ( IDREF ) tab_id   the id of the tab control container element
+ * @params ( IDREF ) panel_id the id of the panel container element
+ * @contructor
+ */
+ 
+function Tab( tab_id, panel_id ) {
+
+  this.tab_id = tab_id;
+  this.panel_id = panel_id;
+  this.node_last_focus = null;
+
+}
+
+/**
+ * init is a subclass of Tab
+ * The init function currentlt doesn't do anything right now
+ * 
+ * @member TabPanel
+ * @return nothing
+ */
+ 
+Tab.prototype.init = function() {
+
+  
+}
+
+
+/**
+ * nextTabPanel moves to the next tab panel 
+ * Updates the current tab panel index
+ * If panel was selected before in current session focus is moved to last control with focus
+ * Used by keyboard event handlers to change currrent tab panel
+ *
+ * @param ( TabPanel object) tab_panel is the TabPanel object associated with the event
+ * @return nothing
+ */
+ 
+nextTabPanel = function( tab_panel ) {
+
+   if( tab_panel.current_tab < (tab_panel.tabs.length - 1) ) {
+
+	 new_tab = tab_panel.current_tab + 1;
+	 
+	 selectTabPanel( tab_panel, new_tab );
+
+   } // endif
+
+}
+
+
+/**
+ * previousTabPanel moves to the previous tab panel 
+ * Updates the current tab panel index
+ * If panel was selected before in current session focus is moved to last control with focus
+ * Used by keyboard event handlers to change currrent tab panel
+ *
+ * @param ( TabPanel object) tab_panel is the TabPanel object associated with the event
+ * @return nothing
+ */
+ 
+previousTabPanel = function( tab_panel ) {
+
+   if( tab_panel.current_tab > 0 ) {
+	 
+	 new_tab = tab_panel.current_tab - 1;
+	 
+	 selectTabPanel( tab_panel, new_tab );
+	   
+   } // endif
+
+}
+
+
+/**
+ * selectTabPanel moves to the previous tab panel 
+ * Updates the current tab panel index
+ * Used by keyboard event handlers to change currrent tab panel
+ * If panel was selected before in current session focus is moved to last control with focus
+ *
+ * @param ( TabPanel object) tab_panel is the TabPanel object associated with the event
+ * @param ( TabPanel object) index is the index in the panel list of the selected panel 
+ * @return nothing
+ */
+ 
+function selectTabPanel( tab_panel, index ) {
+
+   if( (index >= 0 ) && ( index < tab_panel.tabs.length ) ) {
+   
+     // Change the selected state of the current tab  
+     var node_tab = document.getElementById(tab_panel.tabs[tab_panel.current_tab].tab_id);
+     node_tab.className = "";
+
+     // Hide the current tab	 
+     document.getElementById(tab_panel.tabs[tab_panel.current_tab].panel_id).style.display = "none";
+	 
+     // Set ARIA hidden attribute	 
+     document.getElementById(tab_panel.tabs[tab_panel.current_tab].panel_id).setAttribute("aria-hidden", "true");
+ 
+     // Put tab in list in the tabindex order
+	   document.getElementById(tab_panel.tabs[tab_panel.current_tab].tab_id).tabIndex = -1;
+
+     // Move to the next tab
+     tab_panel.current_tab = index;
+	 
+     // Change the selected state of the current tab  
+     var node_tab = document.getElementById(tab_panel.tabs[tab_panel.current_tab].tab_id);
+     node_tab.className = "selected";
+
+     // Show the current tab	 
+     document.getElementById(tab_panel.tabs[tab_panel.current_tab].panel_id).style.display = "block";
+
+     // Set ARIA hidden attribute	 
+     document.getElementById(tab_panel.tabs[tab_panel.current_tab].panel_id).setAttribute("aria-hidden", "false");
+
+     // Put tab in list in the tabindex order
+     document.getElementById(tab_panel.tabs[tab_panel.current_tab].tab_id).tabIndex = 0;
+
+     // Get control with last focus
+	 if( tab_panel.tabs[tab_panel.current_tab].node_last_focus )
+	    tab_panel.tabs[tab_panel.current_tab].node_last_focus.focus();
+	 else
+	    document.getElementById(tab_panel.tabs[tab_panel.current_tab].tab_id).focus();
+
+   } // endif
+
+}
+
+/**
+ * nextTab moves to the next tab in a tab panel 
+ * Updates the current tab panel index
+ * Used by keyboard event handlers to change currrent tab panel
+ * Keyboard focus moves to the new tab 
+ *
+ * @param ( DOM node ) node_target of the element the event occured on
+ * @param ( TabPanel object) tab_panel is the TabPanel object associated with the event
+ * @return nothing
+ */
+
+function nextTab( node_target, tab_panel ) {
+
+   var index = indexOfNodeInTabList( node_target, tab_panel);
+
+   if( (index >= 0 ) && (  index < (tab_panel.tabs.length - 1) ) ) {
+	 
+	 index++;
+	 
+	 selectTabPanel( tab_panel, index );
+	   	   
+     document.getElementById(tab_panel.tabs[index].tab_id).focus();
+	 
+   } // endif
+
+}
+
+/**
+ * previousTab moves to the previous tab in a tab panel 
+ * Updates the current tab panel index
+ * Used by keyboard event handlers to change currrent tab panel
+ * Keyboard focus moves to the new tab 
+ *
+ * @param ( DOM node ) node_target of the element the event occured on
+ * @param ( TabPanel object) tab_panel is the TabPanel object associated with the event
+ * @return nothing
+ */
+
+previousTab = function( node_target, tab_panel ) {
+
+   var index = indexOfNodeInTabList( node_target, tab_panel);
+
+   if( index > 0 ) {
+	 
+	 index--;
+	 
+	 selectTabPanel( tab_panel, index );
+	   	   
+     document.getElementById( tab_panel.tabs[index].tab_id).focus();
+
+   } // endif
+
+}
+
+/**
+ * indexNodeInTabList checcks to see if the node the event ocurred on is in the list of tab in the tab panel
+ *
+ * @param ( DOM node ) node_target of the element the event occured on
+ * @param ( TabPanel object) tab_panel is the TabPanel object associated with the event
+ * @return index of tab panel of current event target; -1 if node target is not in list
+ */
+
+indexOfNodeInTabList = function( node_target, tab_panel ) {
+
+  var flag = -1;
+  
+  for(var i = 0; i < tab_panel.tabs.length; i++ ) {
+
+     if( node_target == document.getElementById( tab_panel.tabs[i].tab_id) ) {
+		  flag = i;
+	  }  // endif
+
+   }  // endfor
+
+  return flag;
+  
+}
+
+/**
+ * isNodeInTabList checcks to see if the node the event ocurred on is in the list of tabs in the tab panel
+ *
+ * @param ( DOM node ) node_target of the element the event occured on
+ * @param ( TabPanel object) tab_panel is the TabPanel object associated with the event
+ * @return boolean true if the node is in the tab list, otherwise false
+ */
+
+isNodeInTabList = function( node_target, tab_panel ) {
+
+  var flag = false;
+  
+  for(var i = 0; !flag &&  (i < tab_panel.tabs.length); i++ ) {
+	  
+	  if( node_target == document.getElementById( tab_panel.tabs[i].tab_id) ) {
+		  flag = true;
+	  } //endif
+	  
+  }  // endfor
+
+//  alert(flag);
+  return flag;
+  
+}
+
+/**
+ * handleTabPanelKeyDownEvent 
+ * This function helps stop TAB, PAGEDOWN and PAFEUP propagation
+ *
+ * @param ( event object ) event 
+ * @param ( TabPanel object) tab_panel is the TabPanel object associated with the event
+ * @return boolean false if the event was used by Tab Panel, otherwisee true
+ */
+
+function handleTabPanelKeyPressEvent(event, tab_panel) {
+    var e = event || window.event;
+
+    switch( e.keyCode ) {
+
+      case KEY_PAGEUP:
+      case KEY_PAGEDOWN:
+	   if( e.ctrlKey && !e.altKey && !e.shiftKey ) {
+             return browser.stopPropagation(e);
+           } // endif
+           break;
+
+      case KEY_TAB:
+	   if( e.ctrlKey && !e.altKey ) {
+             return browser.stopPropagation(e);
+           } // endif
+           break;
+
+    }
+
+}
+
+
+/**
+ * handleTabPanelKeyDownEvent 
+ * Keyboard commands for the Tab Panel
+ *
+ * @param ( event object ) event 
+ * @param ( TabPanel object) tab_panel is the TabPanel object associated with the event
+ * @return boolean false if the event was used by Tab Panel, otherwisee true
+ */
+
+function handleTabPanelKeyDownEvent(event, tab_panel) {
+    var e = event || window.event;
+		
+    // Save information about a modifier key being pressed
+		// May want to ignore keyboard events that include modifier keys 
+    var no_modifier_pressed_flag = !e.ctrlKey && !e.shiftKey && !e.altKey;
+    var control_modifier_pressed_flag = e.ctrlKey && !e.shiftKey && !e.altKey;
+
+    switch( e.keyCode ) {
+		
+      case KEY_LEFT:
+	    case KEY_UP:
+	       if( isNodeInTabList( browser.target(e), tab_panel ) && no_modifier_pressed_flag ) {
+             previousTab( browser.target(e), tab_panel);
+             return browser.stopPropagation(event);
+           } // endif
+           break;
+
+      case KEY_RIGHT:
+	    case KEY_DOWN:
+	       if( isNodeInTabList( browser.target(e), tab_panel ) && no_modifier_pressed_flag  ) {
+             nextTab( browser.target(e), tab_panel);
+             return browser.stopPropagation(e);
+           } // endif
+           break;
+
+      case KEY_PAGEDOWN:
+           if( control_modifier_pressed_flag ) {
+             nextTabPanel( tab_panel );			 
+             return browser.stopPropagation(e);
+           }
+           break;
+
+      case KEY_PAGEUP:
+           if( control_modifier_pressed_flag ) {			   
+             previousTabPanel( tab_panel );
+             return browser.stopPropagation(e);
+           }
+           break;
+
+      case KEY_HOME:
+	       if( no_modifier_pressed_flag ) {
+             selectTabPanel( tab_panel, 0 );
+             return browser.stopPropagation(e);			   
+		   }
+
+      case KEY_END:
+	       if( no_modifier_pressed_flag ) {
+             selectTabPanel( tab_panel, (tab_panel.tabs.length - 1)  );
+             return browser.stopPropagation(e);			   
+		   }
+
+
+      case KEY_TAB:
+           if( e.ctrlKey && !e.altKey ) {
+
+             if( e.shiftKey ) 
+                previousTabPanel( tab_panel );			 
+             else 
+                nextTabPanel( tab_panel );
+
+             return browser.stopPropagation(e);
+			 
+	         }
+					 
+          break;
+					
+	}
+  
+  return true;
+   
+}
+
+
+/**
+ * handleTabPanelClickEvent
+ * handlers changing tab panels when the user uses the mouse to select a tab
+ *
+ * @param ( event object ) event 
+ * @param ( TabPanel object) tab_panel is the TabPanel object associated with the event
+ * @return boolean false if the event was used by Tab Panel, otherwisee true
+ */
+
+handleTabPanelClickEvent = function(event, tab_panel) {
+   var e = event || window.event;
+	
+   var index = indexOfNodeInTabList( browser.target(e), tab_panel);
+
+   if( index >= 0 ) {
+	 
+	 selectTabPanel( tab_panel, index );
+	   	   
+     document.getElementById( tab_panel.tabs[index].tab_id).focus();
+
+     return false;
+
+   } // endif
+
+  return true;
+   
+}
+
+/**
+ * handleInputFocusEvent
+ * handlers keeping track of which HTML input control last had focus
+ * Used by tab panels to restore keyboard focus when using some keyboard commands
+ *
+ * @param ( event object ) event 
+ * @param ( TabPanel object) tab is the Tab object associated with the event
+ */
+
+handleInputFocusEvent = function(event, tab) {
+  var e = event || window.event;
+ 
+  tab.node_last_focus = browser.target(e);
+   
+}
+  </script>
+<body onLoad="initApp()">
+<h1>Panel de pestañas</h1>
+<div role="aplication">
+	<script type="text/javascript">
+
+    var tabpanel1 = new TabPanel("tabpanel_1");
+    widgets.add(tabpanel1);
+
+    var tab1 = new Tab("tab_1", "panel_1");
+    tabpanel1.add(tab1);
+
+    var tab2  = new Tab("tab_2", "panel_2");
+    tabpanel1.add(tab2);
+
+    var tab3 = new Tab("tab_3", "panel_3");
+    tabpanel1.add(tab3);
+
+    var tab4 = new Tab("tab_4", "panel_4");
+    tabpanel1.add(tab4);
+		
+  </script>
+	<h2>Sistema de pedido de pizza</h2>
+	<form>
+		<div id="tabpanel_1" class="tabpanel">
+			<ul id="tablist_1" role="tablist">
+				<li id="tab_1" role="tab" tabindex="0">Pan</li>
+				<li id="tab_2" role="tab" tabindex="-1">Vegetales</li>
+				<li id="tab_3" role="tab" tabindex="-1">Carne</li>
+				<li id="tab_4" role="tab" tabindex="-1">Recoger</li>
+			</ul>
+			<div id="panel_1" role="tabpanel" aria-labelledby="tab_1" aria-hidden="false" style="display: none">
+				<h3>Seleciona tipo de pan</h3>
+				<ul class="controlList">
+					<li>
+						<label>
+						<input onfocus="handleInputFocusEvent(event, tab1)" type="radio" name="crust" value="crust1"/>
+						Masa fina</label>
+					</li>
+					<li>
+						<label>
+						<input onfocus="handleInputFocusEvent(event, tab1)" type="radio" name="crust" value="crust1"/>
+						Masa de pan</label>
+					</li>
+					<li>
+						<label>
+						<input onfocus="handleInputFocusEvent(event, tab1)" type="radio" name="crust" value="crust1"/>
+						Masa clásica</label>
+					</li>
+					<li>
+						<label>
+						<input onfocus="handleInputFocusEvent(event, tab1)" type="radio" name="crust" value="crust1"/>
+						Masa con especias</label>
+					</li>
+				</ul>
+			</div>
+			<div id="panel_2" role="tabpanel" aria-labelledby="tab_2" aria-hidden="true" style="display: none">
+				<h3>Seleciona ingredientes</h3>
+				<ul class="controlList">
+					<li>
+						<label>
+						<input onfocus="handleInputFocusEvent(event, tab2)" type="checkbox" name="vege1"/>
+						Aceitunas</label>
+					</li>
+					<li>
+						<label>
+						<input onfocus="handleInputFocusEvent(event, tab2)" type="checkbox" name="vege2"/>
+						Pimiento</label>
+					</li>
+					<li>
+						<label>
+						<input onfocus="handleInputFocusEvent(event, tab2)" type="checkbox" name="vege3"/>
+						Cebolla</label>
+					</li>
+					<li>
+						<label>
+						<input onfocus="handleInputFocusEvent(event, tab2)" type="checkbox" name="vege4"/>
+						Champiñones</label>
+					</li>
+					<li>
+						<label>
+						<input onfocus="handleInputFocusEvent(event, tab2)" type="checkbox" name="vege5"/>
+						Piña</label>
+					</li>
+				</ul>
+			</div>
+			<div id="panel_3" role="tabpanel" aria-labelledby="tab_3" aria-hidden="true" style="display: none">
+				<h3>Seleciona carne</h3>
+				<ul class="controlList">
+					<li>
+						<label>
+						<input onfocus="handleInputFocusEvent(event, tab3)" type="checkbox" name="meat1"/>
+						Ternera</label>
+					</li>
+					<li>
+						<label>
+						<input onfocus="handleInputFocusEvent(event, tab3)" type="checkbox" name="meat2"/>
+						Polla</label>
+					</li>
+					<li>
+						<label>
+						<input onfocus="handleInputFocusEvent(event, tab3)" type="checkbox" name="meat3"/>
+						Jamón</label>
+					</li>
+					<li>
+						<label>
+						<input onfocus="handleInputFocusEvent(event, tab3)" type="checkbox" name="meat4"/>
+						Pepperoni</label>
+					</li>
+				</ul>
+			</div>
+			<div id="panel_4" role="tabpanel" aria-labelledby="tab_4" aria-hidden="true" style="display: none">
+				<h3>Recoger</h3>
+				<ul class="controlList">
+					<li>
+						<label>
+						<input onfocus="handleInputFocusEvent(event, tab4)" type="radio" name="delivery" value="delivery1"/>
+						Local</label>
+					</li>
+					<li>
+						<label>
+						<input onfocus="handleInputFocusEvent(event, tab4)" type="radio" name="delivery" value="delivery2"/>
+						Recoger</label>
+					</li>
+					<li>
+						<label>
+						<input onfocus="handleInputFocusEvent(event, tab4)" type="radio" name="delivery" value="delivery3"/>
+						A domicilio</label>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</form>
+</div>
+<h2>Comandos de teclado</h2>
+<ul>
+	<li>Left: Muestra la pestaña anterior</li>
+	<li>Right: Muestra la pestaña siguiente</li>
+	<li>Home: Muestra la primera pestaña</li>
+	<li>End: Muestra la última pestaña</li>
+	<li>Control + PgUp y Control + Shift + Tab: Muestra la  pestaña anterior.</li>
+	<li>Control + PgDn y Control + Tab: Muestra la pestaña siguiente</li>
+</ul>
+<h2>ARIA Roles y Propiedades</h2>
+<ul><li> Roles:
+		<ul>
+			<li><code>role="application"</code></li>
+			<li><code>role="tablist"</code></li>
+			<li><code>role="tab"</code></li>
+			<li><code>role="tabpanel"</code></li>
+		</ul>
+	</li>
+	<li> Estados y propiedades:
+		<ul>
+			<li><code>aria-labelledby</code></li>
+			<li><code>aria-hidde</code></li>
+		</ul>
+	</li>
+</ul>
+</body>
+</html>

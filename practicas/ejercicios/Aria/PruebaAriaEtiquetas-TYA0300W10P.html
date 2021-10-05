@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Etiquetas</title>
+<link href="../../../css/estilos.css" rel="stylesheet" type="text/css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+</head>
+<body>
+<div id="cabecera">
+    <a href="http://www.ilunion.com">
+	<img id="cabecera_logo" src="../../../images/cabecera-logoilunion.png" alt="ILUNION Tecnología y ACCESIBILIDAD, logotipo"/></a>
+    <span id="cabecera_texto">Curso de desarrollo de páginas Web Accesibles</span>
+</div>
+<button aria-label="Con etiqueta Label botón 1" type="button" onclick="alert('Hello world!')">botón 1 con aria-label</button>
+<button aria-labelledby="miPrueba" type="button" onclick="alert('Hello world!')">botón 1 con aria-labelledby</button>
+<button aria-describedby="int2" type="button" onclick="alert('Hello world!')">botón 1 con aria-describedby</button>
+<br>
+<input type="button" value="botón 2 con aria-label" aria-label="Con etiqueta Label botón 2"/>
+<input type="button" value="Botón 2 con aria-labelledby"  aria-labelledby="miPrueba" />
+<input type="button" value="Botón 2 con aria-describedby"  aria-describedby="int2" />
+<br>
+<button aria-labelledby="miPrueba" aria-label="Con etiqueta Label botón 1" aria-describedby="int2" type="button" onclick="alert('Hello world!')">botón 1</button>
+<input type="button" value="Botón 2" aria-label="Con etiqueta Label botón 2" aria-labelledby="miPrueba" aria-describedby="int2"/>
+
+<p id="miPrueba">Con etiqueta aria-labelledby</p>
+<p id="int2">Con etiqueta aria-describedby</p>
+
+ <div  class="cuerpo_diapo">
+	<p id="nota_copyright">Copyright &copy; ILUNION Tecnología y Accesibilidad. Reservados todos los derechos.</p>
+	
+ </body>
+</html>
