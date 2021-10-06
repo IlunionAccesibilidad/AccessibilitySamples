@@ -1,0 +1,175 @@
+*{border:0;margin:0;padding:0}
+body{color:#000;font-family:Arial,Helvetica,sans-serif,avenir;font-size:1.1em;height:95%}
+
+/* encabezados */
+h1{color:#0078C9;font-size:1.8em;margin:1em 10px .5em 52px}
+h2{border-bottom:2px solid #FFD100;color:#444;font-size:1.4em;margin:1em 10px 1.1em 52px}
+
+h3{color:#0078C9;font-size:1.2em;margin:1em 10px 1.1em 52px}
+h3#index{color:#0078C9;font-size:1.4em;margin:.5em 10px .3em 52px}/*Pablo*/
+h4{color:#444;font-size:1.2em;margin:1em 1px .3em 3em;font-style: italic;}/*Pablo*/
+h5{color:#0078C9;font-size:1em;margin:1em 1px .3em 4.6em;font-style: italic;}/*Pablo*/
+
+/* enlaces */
+a{color:#18497B;text-decoration:underline;}
+a:hover{text-decoration:none}
+h3 a{font-size:.8em;font-weight:normal}
+h4 a{font-size:.7em;font-weight:normal}
+ul a{display:block;font-size:1.2em;margin-bottom:.3em;}
+
+/* listas */
+ul,
+ol{margin:.5em 10px .5em 5em}
+li{
+	margin-top: .5em;
+	margin-bottom: .5em;
+	margin-left: 1.7em;
+	margin-right: .5em;
+}/*Pablo*/
+
+li a{display:inline;}
+ 
+.blockquote {background:url(../images/bg.gif) repeat-x 0 0;font-size: large;margin:1em 80px;padding:1em 0;font-family:Georgia,Times,serif;font-style:italic;}
+blockquote{background:url(../images/bg.gif) repeat-x 0 0;font-size: large;margin:1em 80px;padding:1em 0;font-family:Georgia,Times,serif;font-style:italic;}
+blockquote p{margin:0 10px 0 52px}
+cite{color:#872B95}
+p{margin-top: 1em;
+ margin-bottom: .5em;
+ margin-left: 4.5em;
+ margin-right: .5em;
+ }
+ /*p:before {content: "- "; }*//*Pablo*/
+ p.entradilla{margin-top: 1em;
+ margin-bottom: .5em;
+ margin-left: 1em;
+ margin-right: .5em;
+ color:#0078C9}/*Pablo*/
+/*
+ol ol,
+ul ol{list-style-type:lower-alpha;}
+ol{list-style-type:decimal;}
+*/
+
+/* cabecera *//*Pablo*/
+div#cabecera{background:transparent url(../images/cabecera-fondo.png) repeat-x 0 0;clear:both;float:none;height:67px;position:relative}
+/*div#cabecera img#cabecera_logo{display:none}
+#cabecera_texto{background:transparent url(../images/cabecera-logoilunion.png) no-repeat left bottom;bottom:23px;color:#fff;font-size:1.4em;font-weight:bolder;left:16px;margin:0;padding:20px 0 0 37px;position:absolute;text-transform:none}*/
+img#cabecera_logo{ 
+ margin-top: .5em;
+ margin-bottom: .5em;
+ margin-left: 1.5em;
+ margin-right: .5em;}
+#cabecera_texto{color:#fff; float:right;font-size:1.2em;font-weight:bolder;  margin-top: .5em;
+ margin-bottom: .5em;
+ margin-left: 5em;
+ margin-right: 1.5em;}
+
+/* nota pie *//*Pablo*/
+#nota_copyright{border-top:1px solid #0078C9;font-size:x-small;margin:5em 0;padding:4px;text-align:center; color:#0078C9;clear: both;}
+
+
+/*
+span#cabecera_nav{
+  float: right;
+  vertical-align: middle;
+  margin-top: 0.5em;
+  margin-right: 1em;
+}
+*/
+
+/*  */
+div#cuerpo_diapo{margin-bottom:80px;}
+div#detalle_diapo {
+  margin-bottom: 80px;
+  margin-left: 2em;
+  margin-right: 2em;
+  padding-top: 1em;
+}
+
+div#resumen_diapo{margin-left:2em;margin-right:2em}
+div#resumen_diapo a{border-bottom:1px dotted navy;color:#000;text-decoration:none;}
+div.cita_wcag{background-color:#ffc;border:1px solid blue;margin:auto;padding:.8em;width:70%;}
+div.practica{background-color:#9cf;border:1px solid blue;margin:auto;padding:.8em;width:80%;}
+div#resumen_diapo li{margin-left:1em;}
+table.ventajas td, table.ventajas th{border:1px solid gray;padding:.5em;width:50%;}
+table.ventajas{border-collapse:collapse;}
+
+/* Una imagen que flota a la derecha, con rotulo. */
+div.imagen_derecha{float:right;margin:0.3em;}
+/* Una imagen que flota al centro con rotulo. */
+div.imagen_centrada{margin-top:3em; margin-bottom:3em;text-align:center; } 
+
+/* Marcar bordes en un párrafo */
+div.parrafo_borde {
+  border: black 3px solid;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%; 
+}
+
+/* El rotulo de la imagen. */
+p.caption_foto {
+  text-align: center;
+  font-weight: bold;
+  margin:0.3em;
+  font-size: smaller;
+}
+
+div#pie{}
+div#pie_diapo { 
+  font-size: small;
+  background-color: #ffc;
+  padding: 2px;
+  width: 100%;
+  margin-top: 5px;
+  text-align: right;}
+
+div.ejemplo_html{
+  white-space: pre;
+  font-family: "courier new", courier, monospace;
+  color: #000;
+  background-color: #ccc;
+  padding: 0.8em;
+  margin: 1em;
+  }
+span.html_elemento{background-color:transparent;color:blue;font-weight:bolder;}
+span.html_attr{background-color:transparent;color:red;font-weight:bolder;}
+span.html_literal{background-color:transparent;color:#f0c;font-weight:bolder;}
+.html_code{font-family:"courier new",courier,monospace;}
+
+span.negrita{font-weight:bolder; border-bottom: thin dashed;}/*Pablo*/
+
+/* tabla */
+table{background:#fff url(../images/bg.gif) repeat-x 0 0;border:1px solid #ccc;border-collapse:collapse;font-size:large;margin:1em auto;padding:1em 0;width:50%}
+table td,
+table th{background:url(../images/bg.gif) repeat-x 0 0;border:1px solid #ccc;border-collapse:collapse;font-size: large;padding:.5em 1em;text-align:center}
+table th{background-color:#ccc;background-image:none;border-collapse:collapse;font-size: large;padding:.5em 1em;text-align:center}
+table caption{background-color:#ccc;background-image:none;border-collapse:collapse;font-size: large;margin:0;padding:.5em 1em;text-align:center}
+table img{display:inline;vertical-align:middle}
+table td.celda_scope,
+table th.celda_scope{background-color:#fabada;background-image:none}
+table.tablaVacia,
+table.tablaVacia table,
+table.tablaVacia caption,
+table.tablaVacia td,
+table.tablaVacia th{background-color:transparent;background-image:none;margin:0;padding:0;width:auto}
+
+
+.oculto {
+  display: block;
+  position: absolute;
+  left: -9999em;
+  width: 1px; height: 1px;
+  overflow: hidden;
+}/*Pablo*/
+.fuente{
+	font-size: x-small;
+}/*Pablo*/
+
+/* projection */
+@media projection {
+	div#detalle_diapo{display:none}
+	div#resumen_diapo, div#detalle_diapo{font-size:2em;margin-left:2em;margin-right:1.5em}
+	h1{font-size:3em;margin-left:1.5em;margin-right:1.5em}
+	div#resumen_diapo li{margin-left:0}
+}

@@ -1,0 +1,57 @@
+body {
+  background-image: url("../images/fondo_gris.png");
+}
+
+h1 {
+  font-size: 4em;
+  width: 70%;
+  padding: 1em;
+  margin: 10%;
+}
+
+h2 {
+  font-size: 3em;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin:  0 0.5em 1em 0.5em;
+  height: 2.5em;
+  border-color: #fff;
+  page-break-before: always;
+}
+
+h3, h4 {
+  font-size: 2.6em;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin:  0 0.5em 1em 0.5em;
+  height: 2.5em;
+  border-color: #fff;
+  page-break-before: always;
+}
+
+li .codigo_xml, p .codigo_xml {
+  font-size: larger;
+}
+
+div.cuerpo_diapo {
+  margin: 1em;
+  padding-right: 50px;
+  font-size: 1.8em;
+  font-family: Verdana, sans-serif;
+  height: 500px;
+  background-image: url("../images/teleservicios_2.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+
+h1 + div.cuerpo_diapo {
+  height: 4em;
+}
+div.apuntes {
+  display: none;
+}
+
+div.codigo_xml {
+  font-size: smaller;
+}
+
